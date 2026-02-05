@@ -1,17 +1,43 @@
-# Quartz v4
+# BigDogAAA
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+这是我的个人博客仓库，基于 Quartz 构建，并通过 GitHub Pages 发布。
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+博客用于记录我在不同层级上对复杂问题的思考与拆解，内容并不追求结论导向，而更关注问题结构、约束条件与内在秩序。
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+👉 博客地址：https://bigdogaaa.github.io
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+---
 
-## Sponsors
+## 内容目录
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+博客内容主要围绕以下四个方向展开：
+
+- **学术问题**  
+  关注模型、方法与形式化问题，包括不确定性建模、生成式问答、视觉-语言模型等研究相关主题。
+
+- **工程问题**  
+  讨论在现实约束下的系统设计与实现问题，包括可扩展性、鲁棒性以及工程取舍。
+
+- **社会与系统问题**  
+  关注技术在更大系统中的作用方式，涉及群体行为、制度约束与长期结构性影响。
+
+- **摄影中的结构与秩序**  
+  通过摄影记录非语言层面的结构感与秩序感，作为理性分析之外的另一种观察方式。
+
+---
+
+## 写作与发布
+
+博客内容以 Markdown 形式撰写，使用 Obsidian 进行本地管理，通过 Quartz 生成静态页面，并由 GitHub Pages 托管发布。  
+该仓库主要用于内容与构建配置的版本管理。
+
+---
+
+## 致谢
+
+写作与整理过程中，ChatGPT 与 Grok 在思路梳理与表达检查中提供了切实帮助。  
+同时，Obsidian、Quartz 与 GitHub 使这一写作与发布流程得以保持简洁与稳定。
+
+---
+
+> 本仓库内容会随研究与思考的推进持续调整。
