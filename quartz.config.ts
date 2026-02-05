@@ -2,9 +2,12 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz 4 Configuration
+ * Quartz 4 Configuration - Academic Minimalism
  *
- * See https://quartz.jzhao.xyz/configuration for more information.
+ * 风格特点：
+ * - 冷静留白
+ * - 学术配色
+ * - 强调可读性
  */
 const config: QuartzConfig = {
   configuration: {
@@ -15,40 +18,42 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
+    locale: "zh-CN",
     baseUrl: "bigdogaaa.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
+      // 省略字体、颜色等
+      mode: "auto",  // 自动跟随操作系统或浏览器偏好
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Inter",           // 学术感无衬线标题
+        body: "Source Serif 4",    // 阅读舒适的衬线正文
+        code: "IBM Plex Mono",     // 保留原来的代码字体
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#fafafa",           // 主背景色，明亮留白
+          lightgray: "#e5e7eb",       // 细分隔线 / 二级背景
+          gray: "#6b7280",            // 次文字
+          darkgray: "#374151",        // 正文主文字
+          dark: "#111827",            // 标题 / 强调文字
+          secondary: "#2e75b5",       // 主色 - 保留你原来的蓝色
+          tertiary: "#84a59d",        // 辅助色，可用于卡片或标签
+          highlight: "rgba(46, 117, 181, 0.1)", // 内容高亮背景
+          textHighlight: "rgba(255, 242, 54, 0.3)", // 文字高亮
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
+          light: "#1f1f1f",           // 主背景
+          lightgray: "#2c2c2c",
+          gray: "#9ca3af",
+          darkgray: "#d1d5db",
+          dark: "#f9fafb",
+          secondary: "#2e75b5",       // 保留蓝色
           tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          highlight: "rgba(46, 117, 181, 0.1)",
+          textHighlight: "rgba(255, 242, 54, 0.3)",
         },
       },
     },
@@ -88,7 +93,6 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
       Plugin.CustomOgImages(),
     ],
   },
