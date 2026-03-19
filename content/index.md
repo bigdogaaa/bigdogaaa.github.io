@@ -26,35 +26,52 @@ title: 欢迎来到我的数字花园
 
 ## 🆕 近期更新
 <!-- RECENT_START -->
-- [[README]]
-- [[工程问题/小龙虾搭建教程全解]]
-- [[工程问题/Skill制作]]
-- [[工程问题/多个大模型统一访问端口]]
-- [[工程问题/龙虾集团的幻觉问题]]
-- [[关于我]]
-- [[社会与系统问题/如何将个人能力变现]]
-- [[工程问题/龙虾集团，启动！]]
-- [[工程问题/龙虾军团]]
-- [[工程问题/为什么大模型会工具调用]]
+- [[摄影中的结构与秩序]]
+- [[static/龙虾相关]]
+- [[.obsidian/plugins/table-editor-obsidian]]
+- [[.obsidian/plugins/spreadsheets]]
+- [[.obsidian/plugins/obsidian-pandoc]]
+- [[.obsidian/plugins/obsidian-latex-suite]]
+- [[.obsidian/plugins/obsidian-kanban]]
+- [[.obsidian/plugins/obsidian-icon-folder]]
+- [[.obsidian/plugins/obsidian-excalidraw-plugin]]
+- [[.obsidian/plugins/dataview]]
 <!-- RECENT_END -->
 
 ---
 
 ## 📚 全部文章
 <!-- TOC_START -->
+- .obsidian
+  - [[.obsidian/icons]]
+  - plugins
+    - [[.obsidian/plugins/dataview]]
+    - [[.obsidian/plugins/obsidian-excalidraw-plugin]]
+    - [[.obsidian/plugins/obsidian-icon-folder]]
+    - [[.obsidian/plugins/obsidian-kanban]]
+    - [[.obsidian/plugins/obsidian-latex-suite]]
+    - [[.obsidian/plugins/obsidian-pandoc]]
+    - [[.obsidian/plugins/spreadsheets]]
+    - [[.obsidian/plugins/table-editor-obsidian]]
 - [[本博客搭建过程]]
-- [[工程问题/多个大模型统一访问端口]]
-- [[工程问题/龙虾集团，启动！]]
-- [[工程问题/龙虾集团的幻觉问题]]
-- [[工程问题/龙虾军团]]
-- [[工程问题/为什么大模型会工具调用]]
-- [[工程问题/小龙虾搭建教程全解]]
-- [[工程问题/Skill制作]]
+- 工程问题
+  - [[工程问题/多个大模型统一访问端口]]
+  - [[工程问题/龙虾集团，启动！]]
+  - [[工程问题/龙虾集团的幻觉问题]]
+  - [[工程问题/龙虾军团]]
+  - [[工程问题/为什么大模型会工具调用]]
+  - [[工程问题/小龙虾搭建教程全解]]
+  - [[工程问题/Skill制作]]
 - [[关于我]]
-- [[社会与系统问题/如何将个人能力变现]]
-- [[学术问题/学术生涯一些关键点]]
-- [[学术问题/QA幻觉检测相关工作调研]]
+- 社会与系统问题
+  - [[社会与系统问题/如何将个人能力变现]]
+- [[摄影中的结构与秩序]]
+- 学术问题
+  - [[学术问题/学术生涯一些关键点]]
+  - [[学术问题/QA幻觉检测相关工作调研]]
 - [[README]]
+- static
+  - [[static/龙虾相关]]
 <!-- TOC_END -->
 
 ---
