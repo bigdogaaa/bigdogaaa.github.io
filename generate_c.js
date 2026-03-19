@@ -18,7 +18,7 @@ function walk(dir) {
 
     if (file === "index.md") return
 
-    if (stat.isDirectory()) {
+    if (stat && stat.isDirectory()) {
       results = results.concat(walk(filePath))
     } else if (file.endsWith(".md")) {
       const relative = filePath
@@ -39,43 +39,32 @@ function walk(dir) {
 function generate() {
   const files = walk(CONTENT_DIR)
 
-  // ===== 最近更新（按时间排序）=====
-  const recent = [...files]
-    .sort((a, b) => b.mtime - a.mtime)
-    .slice(0, 10)
-
+  // 最近更新
+  const recent = [...files].sort((a,b)=>b.mtime-a.mtime).slice(0,10)
   let recentBlock = ""
-  recent.forEach(f => {
-    recentBlock += `- [[${f.path}]]\n`
-  })
+  recent.forEach(f=>{recentBlock+=`- [[${f.path}]]\n`})
 
-  // ===== 全部文章 =====
-  const sorted = [...files].sort((a, b) =>
-    a.path.localeCompare(b.path)
-  )
-
+  // 全部文章
+  const sorted = [...files].sort((a,b)=>a.path.localeCompare(b.path))
   let tocBlock = ""
-  sorted.forEach(f => {
-    tocBlock += `- [[${f.path}]]\n`
-  })
+  sorted.forEach(f=>{tocBlock+=`- [[${f.path}]]\n`})
 
-  // ===== 读取 index.md =====
+  // 读取 index.md
   let content = fs.readFileSync(INDEX_PATH, "utf-8")
 
-  // ===== 替换 RECENT =====
+  // 替换 RECENT
   content = content.replace(
     /<!-- RECENT_START -->[\s\S]*<!-- RECENT_END -->/,
     `<!-- RECENT_START -->\n${recentBlock}<!-- RECENT_END -->`
   )
 
-  // ===== 替换 TOC =====
+  // 替换 TOC
   content = content.replace(
     /<!-- TOC_START -->[\s\S]*<!-- TOC_END -->/,
     `<!-- TOC_START -->\n${tocBlock}<!-- TOC_END -->`
   )
 
   fs.writeFileSync(INDEX_PATH, content, "utf-8")
-
   console.log(`✅ 首页已更新：${files.length} 篇文章`)
 }
 
