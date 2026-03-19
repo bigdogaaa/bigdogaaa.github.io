@@ -1,21 +1,28 @@
+---
+title: 多个大模型统一访问端口
+date: 2026-03-19
+tags:
+  - 龙虾军团
+  - OpenClaw
+---
 # 使用工具 - LiteLLM
 
 > 为什么使用这个？以百炼平台提供的多种大模型为例，我们想统一接入openclaw，避免在openclaw.json中进行繁琐的模型提供者（provider）配置。
 
 1. 安装
-	```
+	```shell
 	pip install litellm
 	```
 2. 创建目录:
-	```
+	```shell
 	make dir -p /data/LiteLLM
 	```
 3. 进入目录，并创建配置文件: 
-	```
+	```shell
 	cd /data/LiteLLM && vim litellm_config.yaml
 	```
 	配置文件如下，注意，api_key我们引入了环境变量**DASHSCOPE_API_KEY**：
-	```
+	```yaml
 	model_list:
 	
 	
@@ -128,7 +135,7 @@
 	    api_key: os.environ/DASHSCOPE_API_KEY
 	```
 1. 启动脚本如下，其中环境变量也可以直接在命令行进行设置，例如*export DASHSCOPE_API_KEY=XXX*：
-	```
+	```shell
 	#!/bin/bash
 	DASHSCOPE_API_KEY=XXX litellm \
 	--config litellm_config.yaml \

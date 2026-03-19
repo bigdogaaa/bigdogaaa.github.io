@@ -8,13 +8,15 @@ const __dirname = path.dirname(__filename)
 const CONTENT_DIR = path.join(__dirname, "content")
 const INDEX_PATH = path.join(CONTENT_DIR, "index.md")
 
-// 遍历目录，返回树状结构
+// 遍历目录，返回树状结构，忽略 .开头文件和 static 文件夹
 function walkTree(dir, base = "") {
   const list = fs.readdirSync(dir)
   const tree = []
 
   list.forEach(file => {
     if (file === "index.md") return
+    if (file.startsWith(".")) return // 忽略隐藏文件
+    if (file === "static") return // 忽略 static 文件夹
 
     const filePath = path.join(dir, file)
     const stat = fs.statSync(filePath)
@@ -22,12 +24,14 @@ function walkTree(dir, base = "") {
 
     if (stat.isDirectory()) {
       const children = walkTree(filePath, relative)
-      tree.push({
-        name: file,
-        path: relative,
-        children,
-        mtime: stat.mtime
-      })
+      if (children.length > 0) {
+        tree.push({
+          name: file,
+          path: relative,
+          children,
+          mtime: stat.mtime
+        })
+      }
     } else if (file.endsWith(".md")) {
       tree.push({
         name: file,
@@ -38,15 +42,14 @@ function walkTree(dir, base = "") {
     }
   })
 
-  // 按文件夹和文件名排序
   tree.sort((a, b) => a.path.localeCompare(b.path))
   return tree
 }
 
-// 根据树生成 TOC 字符串，带缩进
+// 根据树生成 TOC 字符串，使用缩进表示层级
 function treeToToc(tree, level = 0) {
   let toc = ""
-  const indent = "  ".repeat(level)
+  const indent = "  ".repeat(level) // 两个空格缩进
 
   tree.forEach(node => {
     if (node.children.length === 0) {
@@ -82,7 +85,7 @@ function generate() {
   let recentBlock = ""
   recent.forEach(f => { recentBlock += `- [[${f.path}]]\n` })
 
-  // 生成带层级的 TOC
+  // 生成带层级缩进的 TOC
   const tocBlock = treeToToc(tree)
 
   // 读取 index.md
